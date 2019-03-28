@@ -3,9 +3,6 @@ const knexConfig = require('./knexfile').development;
 
 const getDishes = async (db) => {
   return db('dishes');
-  // const result = await db('dishes').select('name');
-  // const dishes = result.map(result => result.name);
-  // return dishes;
 };
 
 const addDish = (db, dish) => {
@@ -15,14 +12,11 @@ const addDish = (db, dish) => {
 };
 
 const getDish = async (db, id) => {
-  return db('dishes').where({ id });
+  return db('dishes').where({ id: id });
 };
 
 const getRecipes = async (db) => {
   return db('recipes');
-  // const result = await db('recipes').select('name', 'dish_id');
-  // const recipes = result.map(result => result.name);
-  // return recipes;
 };
 
 const addRecipe = (db, recipe) => {
